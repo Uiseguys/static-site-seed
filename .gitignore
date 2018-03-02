@@ -1,2 +1,6 @@
-.idea/misc.xml
-.idea/static-site-seed.iml
+.idea/**
+.vscode/**
+.cache/**
+public/**
+node_modules/**/*
+npm-debug.log
