@@ -12,7 +12,7 @@ Also a very nice boilerplate/seed project for static sites
 ## Roadmap 
  
 - [x] create two pages, ‘dashboard’ and ‘about’
-- [ ] use main navigation bar from our stencilJS library
+- [x] use main navigation bar from our stencilJS library
 - [ ] use our i18next service to show a welcome headline and a welcome text on the dashboard
 - [ ] use the changelog generation implemented in our Angular seed and display it on the ‘about’ page using the markdown component from our stencilJS library
 
