@@ -42,14 +42,14 @@ const Header = () => (
               aria-haspopup='true'
               aria-expanded='false'
             >
-              Dropdown
+              Todos
             </a>
             <div className='dropdown-menu' aria-labelledby='navbarDropdown'>
-              <Link className='dropdown-item' to='/about/'>
-                About
+              <Link className='dropdown-item' to='/todos-static/'>
+                Static
               </Link>
-              <Link className='dropdown-item' to='/dashboard/'>
-                Dashboard
+              <Link className='dropdown-item' to='/todos-dynamic/'>
+                Dynamic
               </Link>
               <div className='dropdown-divider' />
               <Link className='dropdown-item' to='/404/'>

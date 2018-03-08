@@ -9,7 +9,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build && npm run copy-lib",
     "copy-lib": "cpx \"node_modules/@ui-guys/stencil-bs-ui-lib/**/\" \"public/stencil-bs-ui-lib\"",
     "develop": "npm run copy-lib && gatsby develop",
     "heroku-postbuild": "gatsby build && npm run copy-lib"
