@@ -4,7 +4,7 @@ const fetch = require('node-fetch')
 
 exports.sourceNodes = ({ boundActionCreators }, pluginOptions, done) => {
   const { createNode } = boundActionCreators
-  const { type = 'Todo' } = pluginOptions
+  const { type = 'TodoName' } = pluginOptions
 
   fetch(`https://loopback3-boilerplate.herokuapp.com/api/todos`).then((res) => res.json()).then((json) => {
     json.map((item) => {
