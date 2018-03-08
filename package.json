@@ -10,7 +10,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "copy-lib": "cpx node_modules/@ui-guys/stencil-bs-ui-lib/**/ public/stencil-bs-ui-lib",
+    "copy-lib": "cpx \"node_modules/@ui-guys/stencil-bs-ui-lib/**/\" \"public/stencil-bs-ui-lib\"",
     "develop": "npm run copy-lib && gatsby develop",
     "heroku-postbuild": "gatsby build && npm run copy-lib"
   },
