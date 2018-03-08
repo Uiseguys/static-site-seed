@@ -10,11 +10,13 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "heroku-postbuild": "gatsby build"
+    "copy-lib": "cpx node_modules/@ui-guys/stencil-bs-ui-lib/**/ public/stencil-bs-ui-lib",
+    "develop": "npm run copy-lib && gatsby develop",
+    "heroku-postbuild": "gatsby build && npm run copy-lib"
   },
   "dependencies": {
     "@ui-guys/stencil-bs-ui-lib": "^0.3.47",
+    "cpx": "^1.5.0",
     "gatsby": "^1.9.218",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-react-helmet": "^2.0.5",
