@@ -15,7 +15,7 @@
     "heroku-postbuild": "gatsby build && npm run copy-lib"
   },
   "dependencies": {
-    "@ui-guys/stencil-bs-ui-lib": "^0.3.47",
+    "@ui-guys/stencil-bs-ui-lib": "^0.3.55",
     "cpx": "^1.5.0",
     "gatsby": "^1.9.231",
     "gatsby-link": "^1.6.39",
