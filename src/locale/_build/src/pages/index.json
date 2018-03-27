@@ -1,0 +1,18 @@
+{
+  "Hello, world!": {
+    "origin": [
+      [
+        "src/pages/index.js",
+        11
+      ]
+    ]
+  },
+  "/about": {
+    "origin": [
+      [
+        "src/pages/index.js",
+        15
+      ]
+    ]
+  }
+}

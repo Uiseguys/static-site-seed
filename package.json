@@ -3,24 +3,36 @@
   "description": "Seed project for a static site based on Gatsby.",
   "version": "1.0.0",
   "author": "Denis Croitoru <dennis.croitoru@gmail.com>",
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": [ "gatsby" ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build && npm run copy-lib",
-    "copy-lib": "cpx \"node_modules/@ui-guys/stencil-bs-ui-lib/**/\" \"public/stencil-bs-ui-lib\"",
-    "develop": "npm run copy-lib && gatsby develop",
-    "heroku-postbuild": "gatsby build && npm run copy-lib"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "heroku-postbuild": "gatsby build",
+    "extract": "cross-env BABEL_ENV=extract lingui extract --clean"
   },
   "dependencies": {
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.42",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.42",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.42",
+    "@babel/preset-react": "^7.0.0-beta.42",
+    "@lingui/babel-preset-react": "^2.0.5",
+    "@lingui/react": "^2.0.5",
     "@ui-guys/stencil-bs-ui-lib": "^0.3.55",
-    "cpx": "^1.5.0",
-    "gatsby": "^1.9.231",
+    "cross-env": "^5.1.4",
+    "gatsby": "^1.9.241",
     "gatsby-link": "^1.6.39",
-    "gatsby-plugin-react-helmet": "^2.0.5",
-    "gatsby-plugin-react-next": "^1.0.10",
+    "gatsby-plugin-react-helmet": "^2.0.8",
+    "gatsby-plugin-react-next": "^1.0.11",
     "react-helmet": "^5.2.0"
+  },
+  "lingui": {
+    "fallbackLocale": "en",
+    "sourceLocale": "en",
+    "localeDir": "src/locale",
+    "format": "minimal",
+    "srcPathDirs": [ "src" ]
   }
 }

@@ -1,10 +1,13 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import { Trans, withI18n } from '@lingui/react'
 
-export default () => (
+const About = ({ i18n }) => (
   <div>
-    <h1>About</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <Link to="/">Go to homepage</Link>
+    <Trans render='h1'>About</Trans>
+    <Trans render='p' id='lorem' />
+    <Link to={i18n.t`/`}><Trans>Go to homepage</Trans></Link>
   </div>
 )
+
+export default withI18n()(About)

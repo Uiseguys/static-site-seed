@@ -1,0 +1,34 @@
+{
+  "About": {
+    "origin": [
+      [
+        "src/pages/about.js",
+        7
+      ]
+    ]
+  },
+  "lorem": {
+    "origin": [
+      [
+        "src/pages/about.js",
+        8
+      ]
+    ]
+  },
+  "/": {
+    "origin": [
+      [
+        "src/pages/about.js",
+        9
+      ]
+    ]
+  },
+  "Go to homepage": {
+    "origin": [
+      [
+        "src/pages/about.js",
+        9
+      ]
+    ]
+  }
+}

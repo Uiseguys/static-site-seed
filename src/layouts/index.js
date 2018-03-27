@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-
+import { I18nProvider, withI18n, Trans } from '@lingui/react'
+import { navigateTo } from 'gatsby-link'
+import { catalogs, prefix, deprefix, langFromPath } from '../i18n-config'
 import Header from '../components/Header'
 // import './index.css'
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, lang, onLangChange }) => (
   <div>
     <Helmet
       title="Gatsby Default Starter"
@@ -14,7 +16,7 @@ const TemplateWrapper = ({ children }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header />
+    <Header lang={lang} onLangClick={onLangChange}/>
     <div
       style={{
         margin: '0 auto',
@@ -32,4 +34,17 @@ TemplateWrapper.propTypes = {
   children: PropTypes.func,
 }
 
-export default TemplateWrapper
+export default class extends React.Component {
+  onLangChange = (lang) => {
+    navigateTo(prefix(lang) + deprefix(this.props.location.pathname))
+  }
+
+  render = () => {
+    const lang = langFromPath(this.props.location.pathname)
+    return (
+      <I18nProvider language={lang} catalogs={catalogs}>
+        <TemplateWrapper {...this.props} lang={lang} onLangChange={this.onLangChange} />
+      </I18nProvider>
+    )
+  }
+}

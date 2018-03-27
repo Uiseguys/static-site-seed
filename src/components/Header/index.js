@@ -1,7 +1,12 @@
 import React from 'react'
 import Link from 'gatsby-link'
-
-const Header = () => (
+import { Trans, withI18n } from '@lingui/react'
+const Lang = ({ lang, onClick, selected }) => (
+  <a style={{ color: '#666', marginRight: '10px', textDecoration: selected ? 'underline' : 'none', cursor: 'pointer' }} onClick={onClick}>
+    {lang}
+  </a>
+)
+const Header = ({i18n, onLangClick, lang}) => (
   <div
     style={{
       background: '#f8f9fa',
@@ -16,20 +21,20 @@ const Header = () => (
       }}
     >
       <scb-navbar size='lg' navbarcolor='light' bgcolor='light' placement=''>
-        <Link slot='slot-navbar-brand-left' className='navbar-brand' to='/'>
-          Home
+        <Link slot='slot-navbar-brand-left' className='navbar-brand' to={i18n.t`/`}>
+          <Trans>Home</Trans>
         </Link>
 
-        <ul slot='slot-navbar-content' className='navbar-nav mr-auto'>
+        <ul slot='slot-navbar-content' className='navbar-nav'>
           <li className='nav-item active' />
           <li className='nav-item'>
-            <Link className='nav-link' to='/about/'>
-              About
+            <Link className='nav-link' to={i18n.t`/about`}>
+              <Trans>About</Trans>
             </Link>
           </li>
           <li className='nav-item'>
-            <Link className='nav-link' to='/dashboard/'>
-              Dashboard
+            <Link className='nav-link' to={i18n.t`/dashboard`}>
+              <Trans>Dashboard</Trans>
             </Link>
           </li>
           <li className='nav-item dropdown'>
@@ -42,13 +47,13 @@ const Header = () => (
               aria-haspopup='true'
               aria-expanded='false'
             >
-              Todos
+              <Trans>Todos</Trans>
             </a>
             <div className='dropdown-menu' aria-labelledby='navbarDropdown'>
-              <Link className='dropdown-item' to='/todos-static/'>
+              <Link className='dropdown-item' to={i18n.t`/todos-static`}>
                 Static
               </Link>
-              <Link className='dropdown-item' to='/todos-dynamic/'>
+              <Link className='dropdown-item' to={i18n.t`/todos-dynamic`}>
                 Dynamic
               </Link>
               <div className='dropdown-divider' />
@@ -59,13 +64,17 @@ const Header = () => (
           </li>
           <li className='nav-item'>
             <a className='nav-link disabled' href='#'>
-              Disabled
+              <Trans>Disabled</Trans>
             </a>
           </li>
         </ul>
+        <div slot='slot-navbar-content' className='mr-0 ml-auto'>
+          <Lang lang='en' onClick={(e) => onLangClick('en')} selected={lang == 'en'} />
+          <Lang lang='ro' onClick={(e) => onLangClick('ro')} selected={lang == 'ro'} />
+        </div>
       </scb-navbar>
     </div>
   </div>
 )
 
-export default Header
+export default withI18n()(Header)

@@ -1,0 +1,34 @@
+{
+  "Dashboard": {
+    "origin": [
+      [
+        "src/pages/dashboard.js",
+        7
+      ]
+    ]
+  },
+  "lorem": {
+    "origin": [
+      [
+        "src/pages/dashboard.js",
+        8
+      ]
+    ]
+  },
+  "/": {
+    "origin": [
+      [
+        "src/pages/dashboard.js",
+        9
+      ]
+    ]
+  },
+  "Go to homepage": {
+    "origin": [
+      [
+        "src/pages/dashboard.js",
+        10
+      ]
+    ]
+  }
+}
